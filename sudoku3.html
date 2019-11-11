@@ -1,0 +1,101 @@
+<!--
+Sudokui B
+Your Name: Bao Trung Vo - bvo4@uic.edu
+Collaborators: None
+-->
+<!doctype html>
+<html>
+<head>
+<title>Trung sudoku B 3x3</title>
+<meta name="viewport" content="width=device-width,user-scalable=no">
+<link rel="stylesheet" href="layout.css">
+<script>
+    var size = '3x3'
+    var log_color="white";
+    addEventListener("keydown", function(event) 
+    {
+    if (event.keyCode == 87){
+        log_color="white";
+      document.body.style.background = "white";
+    } 
+    if (event.keyCode == 86){
+        log_color="violet";
+      document.body.style.background = "violet";
+    }
+    if (event.keyCode == 82){
+        log_color="red";
+      document.body.style.background = "red";
+    }
+    if (event.keyCode == 80){
+        log_color="purple";
+      document.body.style.background = "purple";
+    }
+    });
+</script>
+<script src="lib/jquery-3.1.1.js"></script>
+<script src="lib/seedrandom.js"></script>
+<script src="algorithm.js"></script>
+<script src="hintmaker.js"></script>
+<script src="board3.js"></script>
+<!-- Remove this script to disable logging -->
+<script src="logging.js"></script>
+</head>
+<body>
+<table style="width:100%;min-height:80%;"><tr><td align="center">
+<center><h1>Trung sudoku B</h1>
+    <h2> Choose your sudoku size (2x2) or (3x3)</h2>
+    <h3> <a href="index.html">2x2</a> <a href="sudoku3.html">3x3</a></h3>
+<p style="margin-top:0">Your task: solve puzzles #1-#5 or more.</p>
+</center>
+<center style="display:table-cell;vertical-align:middle;">
+<div class="puzzlename" id="grade">&nbsp;</div>
+<table class="timescore"><tr>
+<td style="text-align:center">
+<span class="progress">Time</span>
+<span class="finished">Finished in</span> <span class="timer">0</span></td>
+</table>
+<table><tr>
+<td style="text-align:center" id="leftlayout">
+</td>
+<td>
+<center id="centerlayout">
+<input type="button" value="Clear" id="clearbutton"
+   title="Reset puzzle."
+><input type="button" value="Help" id="helpbutton"
+   title="Help"
+><input type="button" value="Check" id="checkbutton"
+   title="Check for mistakes."
+><input type="button" value="&laquo; Prev" id="prevbutton"
+   title="Previous puzzle."
+><input type="button" value="Next &raquo;" id="nextbutton"
+   title="Next puzzle."
+>
+<p id="bottomtext"></p>
+</center>
+</td>
+<td id="rightlayout">
+</td>
+</tr>
+<td></tr>
+</table>
+<div class="sudoku-popup" id="victory">You Win!</div>
+<div class="sudoku-popup" id="ok">ok so far</div>
+<div class="sudoku-popup" id="errors">mistake</div>
+<!--<div class="sudoku-popup" id="intro">
+<p>Program was made by Trung Vo as a project for assignment in CS 422 course at UIC
+<p>Click help button for more information about the game</div>-->
+<div class="sudoku-popup" id="instruction">
+<p>In this experiment, you will solve mini Sudoku puzzles.
+<p>The rules of Sudoku are to fill in all the digits so that no duplicates
+appear in any row, column or bold-bordered square.
+<p>This version of the interface uses mouse and keyboard
+To write a number, click on a handwritten number on the side, or press number button on your keyboard(1-9)
+then click on a square. The program will return to eraser atomatically.
+<p>Press d for next puzzle, a to go back to previous puzzle, enter to check, c to clear the board.
+Hold ctrl for small number.
+<p>Press P/R/W/V to change background color
+</div>
+</td></tr>
+</table>
+</body>
+</html>
